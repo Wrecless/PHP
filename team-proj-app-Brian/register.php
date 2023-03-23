@@ -11,9 +11,9 @@
     }
 
     // get form data for firstname, lastname, username, password and sanitize
-    $firstname = $_POST['firstname'];
-    $lastname = $_POST['lastname'];
-    $username = $_POST['username'];
+    $firstname = $_POST['firstName'];
+    $lastname = $_POST['lastName'];
+    $username = $_POST['userName'];
     $password = $_POST['password'];
 
     // connect to the database
@@ -44,12 +44,12 @@
     }
     else {
         //username does not exists, insert the new user and sanitize the data
-        $sql = "INSERT INTO users (firstname, lastname, username, password) VALUES ('$firstname', '$lastname', '$username', '$password')";
+        $sql = "INSERT INTO users (first_name, last_name, username, password) VALUES ('$firstname', '$lastname', '$username', '$password')";
     }
     if ($connection->query($sql) === TRUE) {
         echo "New record created successfully";
         // redirect to the login page
-        header("Location: login.php");
+        header("Location: login.html");
     } else {
         echo "Error: " . $sql . "<br>" . $connection->error;
     }

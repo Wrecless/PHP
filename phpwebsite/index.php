@@ -15,6 +15,9 @@ if ($results === false) {
 ?>
 
 <?php require "includes/header.php"; ?>
+
+<button onclick="window.location.href='new-article.php'">form</button>
+
 <?php if (empty($articles)): ?>
     <p>No articles found.</p>
 <?php else: ?>
@@ -22,9 +25,12 @@ if ($results === false) {
         <?php foreach ($articles as $article): ?>
             <li>
                 <article>
-                    <h3><a href="article.php?id=<?= $article['id']; ?>"><?= $article['title']; ?></a></h3>
+                    <h3>
+                        <a href="article.php?id=<?= $article['id']; ?>">
+                            <?= htmlspecialchars($article['title']); ?></a>
+                    </h3>
                     <p>
-                        <?= $article['content']; ?>
+                        <?= htmlspecialchars($article['content']); ?>
                     </p>
                 </article>
             </li>
@@ -32,5 +38,5 @@ if ($results === false) {
     </ul>
 <?php endif; ?>
 
-<button onclick="window.location.href='new-article.php'">form</button>
+
 <?php require "includes/footer.php"; ?>

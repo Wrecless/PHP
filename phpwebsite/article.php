@@ -1,22 +1,17 @@
 <?php
-include "includes/database.php";
+require "includes/database.php";
+require "includes/pre_article.php";
 
 $connection = getDB();
 
-if (is_numeric($_GET['id']) && is_numeric($_GET['id'])) {
-	$sql = "SELECT * FROM articles WHERE id = " . $_GET['id'];
+if (isset($_GET['id'])) {
 
-	$results = mysqli_query($connection, $sql);
-
-	if ($results === false) {
-		echo mysqli_error($connection);
-	} else {
-		$articles = mysqli_fetch_assoc($results);
-	}
+	$pre_article = getArticle($connection, $_GET['id']);
 
 } else {
-	echo "Invalid ID";
+	$article = null;
 }
+
 ?>
 
 <?php require "includes/header.php"; ?>
@@ -26,12 +21,17 @@ if (is_numeric($_GET['id']) && is_numeric($_GET['id'])) {
 	<ul>
 		<li>
 			<h3>
-				<?php echo $articles['title']; ?>
+				<?php echo htmlspecialchars($articles['title']); ?>
 			</h3>
 			<p>
-				<?php echo $articles['content']; ?>
+				<?php echo htmlspecialchars($articles['content']); ?>
 			</p>
 		</li>
 	</ul>
 <?php endif; ?>
+
+<button onclick="window.location.href='index.php'">Home</button>
+
+<?php require "includes/article-form.php"; ?>
+
 <?php require "includes/footer.php"; ?>

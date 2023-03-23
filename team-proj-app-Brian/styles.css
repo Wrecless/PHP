@@ -1,0 +1,249 @@
+/* Default styles */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
+}
+
+h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #008CBA;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px; /* Add margin-top */
+}
+
+button:hover {
+    background-color: #006687;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+}
+
+button[type="submit"]:hover {
+    background-color: #2E8B57;
+}
+
+button[type="reset"] {
+    background-color: #f44336;
+}
+
+button[type="reset"]:hover {
+    background-color: #d32f2f;
+}
+
+.error {
+    color: #ff0000;
+}
+
+.success {
+    color: #008CBA;
+}
+
+.login-container {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.login-container th,
+.login-container td {
+    padding: 10px;
+    text-align: center;
+}
+
+.login-container th {
+    background-color: #008CBA;
+    color: #fff;
+}
+
+.login-container tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table.full-width {
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 1.1rem;
+    text-align: center;
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  table.full-width th, 
+  table.full-width td {
+    max-width: calc(100% / 4);
+    word-break: break-word;
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  table.full-width th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  table.full-width tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+/* Mobile-first media queries */
+
+@media only screen and (min-width: 600px) {
+    /* Adjustments for tablet screens */
+    .container {
+        max-width: 600px;
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea {
+        font-size: 18px;
+    }
+
+    table.full-width {
+        max-width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 1.1rem;
+        text-align: center;
+        table-layout: fixed;
+        width: 100%;
+      }
+      
+      table.full-width th, 
+      table.full-width td {
+        max-width: calc(100% / 4);
+        word-break: break-word;
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      
+      table.full-width th {
+        font-size: 1rem;
+      }
+}
+
+@media only screen and (min-width: 428px) {
+    /* Adjustments for phone screens */
+    .container {
+        max-width: 600px;
+        padding: 10px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea {
+        font-size: 18px;
+    }
+
+    table.full-width {
+        max-width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 1.1rem;
+        text-align: center;
+        table-layout: fixed;
+        width: 100%;
+      }
+      
+      table.full-width th, 
+      table.full-width td {
+        max-width: calc(100% / 4);
+        word-break: break-word;
+        padding: 12px;
+        border: 1px solid #ddd;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      
+      table.full-width th {
+        font-size: 1rem;
+      }
+}
+
+@media only screen and (min-width: 960px) {
+    /* Adjustments for desktop screens */
+    .container {
+        max-width: 960px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    textarea {
+        font-size: 20px;
+    }
+
+    .login-container {
+        font-size: 20px;
+    }
+    table.full-width {
+        font-size: 0.9rem;
+      }
+      
+      table.full-width th, 
+      table.full-width td {
+        padding: 8px;
+        max-width: calc(100% / 4);
+        word-break: break-word;
+      }
+      
+      table.full-width th {
+        font-size: 1rem;
+      }
+}

@@ -1,3 +1,0 @@
-. mysqli_escape_string($connection, $_POST['title']) . "', '"
-		. mysqli_escape_string($connection, $_POST['content']) . "', '"
-		. mysqli_escape_string($connection, $_POST['published_at']) . "')";
