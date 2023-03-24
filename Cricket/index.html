@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Coiny&family=Fasthand&family=Sono:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="index.css"
+    />
+  </head>
+
+  <body>
+    <div class="container">
+      <h2 class="header">Login Page</h2>
+      <form
+        method="POST"
+        action="login.php"
+      >
+        <div class="form-group">
+          <label>Username</label>
+          <div>
+            <input
+              type="text"
+              name="username"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <div>
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              required
+            />
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="depth login"
+        >
+          Login
+        </button>
+      </form>
+      <button
+        class="depth register"
+        type="button"
+        onclick="window.location.href = 'register.html';"
+      >
+        Register
+      </button>
+    </div>
+  </body>
+</html>
