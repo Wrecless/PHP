@@ -27,6 +27,8 @@ if (isset($_GET['id'])) {
         </p>
     </article>
 
+    <a href="edit-article.php?id=<?= $article['id']; ?>">Edit</a>
+
 <?php endif; ?>
 
 <?php require 'includes/footer.php'; ?>

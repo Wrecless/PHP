@@ -5,9 +5,9 @@ require 'include/database.php';
 $conn = getDB();
 
 //get user input from form
-$username = $_POST['username'];
-$email = $_POST['email'];
-$password = $_POST['password'];
+$username = htmlspecialchars($_POST['username']);
+$email = htmlspecialchars($_POST['email']);
+$password = htmlspecialchars($_POST['password']);
 
 //hash password
 $hashed_password = hash('sha256', $password);
