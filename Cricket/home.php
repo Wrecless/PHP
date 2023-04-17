@@ -29,7 +29,7 @@
     </script>
 
     <div class="notification">
-        <p> Welcome User </p>
+        <p> Welcome </p>
         <span class="notification__progress"></span>
     </div>
 </body>
