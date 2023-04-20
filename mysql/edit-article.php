@@ -34,25 +34,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $errors = validateArticle($title, $content, $published_at);
 
     if (empty($errors)) {
-
-        $sql = "UPDATE articles SET title = ?, content = ?, published_at = ? WHERE id = ?";
+        
+        $sql = "UPDATE article
+                SET title = ?,
+                    content = ?,
+                    published_at = ?
+                WHERE id = ?";
 
         $stmt = mysqli_prepare($conn, $sql);
 
         if ($stmt === false) {
+
             echo mysqli_error($conn);
+
         } else {
+
             if ($published_at == '') {
                 $published_at = null;
             }
-            mysqli_stmt_bind_param($stmt, "sssi", $title, $content, $published_at, $_GET['id']);
+
+            mysqli_stmt_bind_param($stmt, "sssi", $title, $content, $published_at, $id);
+
             if (mysqli_stmt_execute($stmt)) {
+
                 redirect("/mysql/article.php?id=$id");
+
             } else {
+
                 echo mysqli_stmt_error($stmt);
+
             }
         }
-
     }
 }
 

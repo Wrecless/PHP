@@ -5,13 +5,14 @@
  *
  * @param object $conn Connection to the database
  * @param integer $id the article ID
+ * @param string $columns Optional list of columns for the select, defaults to *
  *
  * @return mixed An associative array containing the article with that ID, or null if not found
  */
-function getArticle($conn, $id)
+function getArticle($conn, $id, $columns = '*')
 {
-    $sql = "SELECT *
-            FROM articles
+    $sql = "SELECT $columns
+            FROM article
             WHERE id = ?";
 
     $stmt = mysqli_prepare($conn, $sql);
@@ -33,6 +34,7 @@ function getArticle($conn, $id)
     }
 }
 
+
 /**
  * Validate the article properties
  *
@@ -52,10 +54,10 @@ function validateArticle($title, $content, $published_at)
     if ($content == '') {
         $errors[] = 'Content is required';
     }
-
+/**
     if ($published_at != '') {
-        $date_time = date_create_from_format('Y-m-d H:i:s', $published_at);
-
+        $date_time = date_create_from_format($published_at);
+        
         if ($date_time === false) {
 
             $errors[] = 'Invalid date and time';
@@ -69,6 +71,6 @@ function validateArticle($title, $content, $published_at)
             }
         }
     }
-
+**/
     return $errors;
 }
