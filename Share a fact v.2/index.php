@@ -2,23 +2,14 @@
 
 require 'classes/database.php';
 require 'includes/auth.php';
+require 'classes/Article.php';
 
 session_start();
 
 $db = new Database();
 $conn = $db->getConn();
 
-$sql = "SELECT *
-        FROM article
-        ORDER BY published_at;";
-
-$results = $conn->query($sql);
-
-if ($results === false) {
-    var_dump($conn->errorInfo());
-} else {
-    $articles = $results->fetchAll(PDO::FETCH_ASSOC);
-}
+$articles = Article::getAll($conn);
 
 ?>
 <?php require 'includes/header.php'; ?>
