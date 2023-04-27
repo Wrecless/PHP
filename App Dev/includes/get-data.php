@@ -4,14 +4,14 @@
 $host = 'localhost';
 $user = 'cms_w';
 $password = '64w6H2rOJ1zwLRyk';
-$database = 'fruits';
+$database = 'food';
 
 // Create PDO connection
 $dsn = "mysql:host=$host;dbname=$database";
 $pdo = new PDO($dsn, $user, $password);
 
 // Prepare SQL statement to retrieve data from food table
-$sql = "SELECT * FROM food";
+$sql = "SELECT * FROM fish_prices";
 $stmt = $pdo->prepare($sql);
 $stmt->execute();
 
