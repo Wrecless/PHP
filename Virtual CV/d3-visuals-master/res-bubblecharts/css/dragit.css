@@ -1,0 +1,127 @@
+
+path.lineTrajectory, path.subTrajectory {
+  stroke-width: 2;
+  stroke-opacity: 0.2;
+  opacity: 0.5;
+  fill-opacity: 0.3;
+  stroke: gray;
+  fill: none;
+  pointer-events: none;
+}
+
+path.lineTrajectoryMonotone {
+  stroke-width: 2;                            
+  fill: none;   
+  pointer-events: none;   
+  stroke: lightgray;   
+}
+
+circle.pointTrajectory {
+   pointer-events: none;
+   stroke: lightgray;
+   fill: black;
+   opacity: .5;
+}
+
+line.lineClosestTrajectory {
+  stroke: black;
+  stroke-dasharray: 4,4;
+  display: block;
+}
+
+line.lineClosestPoint {
+  stroke: black;
+  opacity: .1;
+  display: block;
+}
+
+.selected {
+  opacity: .5;
+}
+
+circle.pointClosestTrajectory {
+  opacity: .1;
+  display: block;
+}
+
+circle.focusGuide {
+  opacity: 1;
+  display: block;
+  fill: none;
+  stroke: black;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-left:40px;
+  font-weight: 200;
+  font-size: 14px;
+}
+
+html,body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+text {
+  cursor: default;
+}
+
+h1 {
+  font-weight: 400;
+}
+
+text {
+  font-size: 10px;
+}
+
+.dot {
+  stroke: #000;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.label {
+  fill: #777;
+}
+
+.year.label {
+  font: 500 196px "Helvetica Neue";
+  fill: #ddd;
+}
+
+.country.label  {
+  font: 500 96px "Helvetica Neue";
+  fill: #ddd;
+}
+
+.year.label.active {
+  fill: #aaa;
+}
+
+circle.pointTrajectory {
+   pointer-events: none;
+   stroke: lightgray;
+   fill: black;
+   opacity: 0;
+}
+
+path.lineTrajectory {
+  stroke-width: 2;
+  stroke-opacity: .5;
+  stroke: black;
+  fill: none;
+  pointer-events: none;
+}
+
+.selected {
+  stroke-width: 4;
+}
