@@ -1,5 +1,4 @@
 <?php
-
 // Database connection details
 $host = 'localhost';
 $user = 'cms_w';

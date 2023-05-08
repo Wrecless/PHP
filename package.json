@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "d3": "^7.8.4"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.8"
   }
 }
